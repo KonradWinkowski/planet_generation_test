@@ -19,7 +19,7 @@ class GameScene: SKScene {
         
         view.ignoresSiblingOrder = true
         
-        planet_info = [[Int]](count:500, repeatedValue:[Int](count:500, repeatedValue:0))
+        planet_info = [[Int]](count:100, repeatedValue:[Int](count:100, repeatedValue:0))
         
         let center_val = CGFloat((planet_info?.count)! / 2)
         
@@ -32,9 +32,9 @@ class GameScene: SKScene {
                 let val = planet_info![index_y][index_x]
                 
                 if val == 1 {
-                    let node = SKSpriteNode.init(color: UIColor.redColor(), size: CGSizeMake(10, 10))
+                    let node = SKSpriteNode.init(color: UIColor.redColor(), size: CGSizeMake(40, 40))
                     node.name = "\(index_y)\(index_x)"
-                    node.position = CGPointMake(CGFloat(index_x) * 10, CGFloat(index_y) * 10)
+                    node.position = CGPointMake(CGFloat(index_x) * 40, CGFloat(index_y) * 40)
                     node.zPosition = 1;
                     self.addChild(node)
                 }
@@ -69,7 +69,7 @@ class GameScene: SKScene {
                 
                 let distance = distanceBetweenPoints(planet_center_point!, toPoint: index_point)
                 
-                if distance < 250 {
+                if distance < 35 {
                     planet_info![index_y][index_x] = 1
                 }
                 
